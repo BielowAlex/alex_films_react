@@ -1,1 +1,10 @@
 @import "imports";
+
+
+body {
+  background: var(--back-color);
+  color: var(--font-color);
+  font-family: 'WhyteInktrap', sans-serif;
+  font-weight: 400;
+}
+

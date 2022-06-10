@@ -21,6 +21,7 @@ function App() {
             <header className="header">
                 <img src="/img/header_back.jpg" alt="background"/>
                 <div className="film_desc">
+                    <img src="/img/header_back.jpg" alt="poster"/>
                     <h2>승리호 Space Sweepers</h2>
                     <p>In the year 2092, space is full of dangerous floating garbage like discarded satellites and
                         deserted spaceships. The crew of a space junk collector ship called The Victory discovers a
@@ -33,7 +34,8 @@ function App() {
                 </div>
             </header>
             <div className="content">
-                <div className="popular">
+                <div className="content_item popular">
+
                     <h3>Popular movies</h3>
                     <div className="popular_carrousel">
                         <svg width="25.618px" height="25.618px" viewBox="-5 0 25.618 25.618"
@@ -51,7 +53,7 @@ function App() {
                         </svg>
                         <div className="carrousel_screen">
                             <div className="popular_list">
-                                <div className="popular_cart">
+                                <div className="movies_cart">
                                     <div className="poster">
                                         <img src="/img/film.jpg" alt="poster"/>
                                     </div>
@@ -84,7 +86,211 @@ function App() {
                         </svg>
                     </div>
                 </div>
+                <div className="content_item movies_section">
+                    <div className="title">
+                        <h3>Trending movies</h3>
+                    </div>
+                    <div className="movies_list">
+                        <div className="movies_cart">
+                            <div className="poster">
+                                <img src="/img/film.jpg" alt="poster"/>
+                            </div>
+                            <div className="cart_title">
+                                <h4>The little things</h4>
+                                <span className="year">
+                                             2022
+                                         </span>
+                            </div>
+                        </div>
+                        <div className="movies_cart">
+                            <div className="poster">
+                                <img src="/img/film.jpg" alt="poster"/>
+                            </div>
+                            <div className="cart_title">
+                                <h4>The little things</h4>
+                                <span className="year">
+                                             2022
+                                         </span>
+                            </div>
+                        </div>
+                        <div className="movies_cart">
+                            <div className="poster">
+                                <img src="/img/film.jpg" alt="poster"/>
+                            </div>
+                            <div className="cart_title">
+                                <h4>The little things</h4>
+                                <span className="year">
+                                             2022
+                                         </span>
+                            </div>
+                        </div>
+                        <div className="movies_cart">
+                            <div className="poster">
+                                <img src="/img/film.jpg" alt="poster"/>
+                            </div>
+                            <div className="cart_title">
+                                <h4>The little things</h4>
+                                <span className="year">
+                                             2022
+                                         </span>
+                            </div>
+                        </div>
+                        <div className="movies_cart">
+                            <div className="poster">
+                                <img src="/img/film.jpg" alt="poster"/>
+                            </div>
+                            <div className="cart_title">
+                                <h4>The little things</h4>
+                                <span className="year">
+                                             2022
+                                         </span>
+                            </div>
+                        </div>
+                        <div className="movies_cart">
+                            <div className="poster">
+                                <img src="/img/film.jpg" alt="poster"/>
+                            </div>
+                            <div className="cart_title">
+                                <h4>The little things</h4>
+                                <span className="year">
+                                             2022
+                                         </span>
+                            </div>
+                        </div>
+                        <div className="movies_cart">
+                            <div className="poster">
+                                <img src="/img/film.jpg" alt="poster"/>
+                            </div>
+                            <div className="cart_title">
+                                <h4>The little things</h4>
+                                <span className="year">
+                                             2022
+                                         </span>
+                            </div>
+                        </div>
+                        <div className="movies_cart">
+                            <div className="poster">
+                                <img src="/img/film.jpg" alt="poster"/>
+                            </div>
+                            <div className="cart_title">
+                                <h4>The little things</h4>
+                                <span className="year">
+                                             2022
+                                         </span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <a href="#">See more</a>
+                </div>
+                <div className="content_item movies_section">
+                    <div className="title">
+                        <h3>Trending tv</h3>
+                    </div>
+                    <div className="movies_list">
+                        <div className="movies_cart">
+                            <div className="poster">
+                                <img src="/img/film.jpg" alt="poster"/>
+                            </div>
+                            <div className="cart_title">
+                                <h4>The little things</h4>
+                                <span className="year">
+                                             2022
+                                         </span>
+                            </div>
+                        </div>
+                        <div className="movies_cart">
+                            <div className="poster">
+                                <img src="/img/film.jpg" alt="poster"/>
+                            </div>
+                            <div className="cart_title">
+                                <h4>The little things</h4>
+                                <span className="year">
+                                             2022
+                                         </span>
+                            </div>
+                        </div>
+                        <div className="movies_cart">
+                            <div className="poster">
+                                <img src="/img/film.jpg" alt="poster"/>
+                            </div>
+                            <div className="cart_title">
+                                <h4>The little things</h4>
+                                <span className="year">
+                                             2022
+                                         </span>
+                            </div>
+                        </div>
+                        <div className="movies_cart">
+                            <div className="poster">
+                                <img src="/img/film.jpg" alt="poster"/>
+                            </div>
+                            <div className="cart_title">
+                                <h4>The little things</h4>
+                                <span className="year">
+                                             2022
+                                         </span>
+                            </div>
+                        </div>
+                        <div className="movies_cart">
+                            <div className="poster">
+                                <img src="/img/film.jpg" alt="poster"/>
+                            </div>
+                            <div className="cart_title">
+                                <h4>The little things</h4>
+                                <span className="year">
+                                             2022
+                                         </span>
+                            </div>
+                        </div>
+                        <div className="movies_cart">
+                            <div className="poster">
+                                <img src="/img/film.jpg" alt="poster"/>
+                            </div>
+                            <div className="cart_title">
+                                <h4>The little things</h4>
+                                <span className="year">
+                                             2022
+                                         </span>
+                            </div>
+                        </div>
+                        <div className="movies_cart">
+                            <div className="poster">
+                                <img src="/img/film.jpg" alt="poster"/>
+                            </div>
+                            <div className="cart_title">
+                                <h4>The little things</h4>
+                                <span className="year">
+                                             2022
+                                         </span>
+                            </div>
+                        </div>
+                        <div className="movies_cart">
+                            <div className="poster">
+                                <img src="/img/film.jpg" alt="poster"/>
+                            </div>
+                            <div className="cart_title">
+                                <h4>The little things</h4>
+                                <span className="year">
+                                             2022
+                                         </span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <a href="#">See more</a>
+                </div>
             </div>
+            <footer className='footer'>
+                <div className="logo">
+                    <img width={58} height={58} src="/img/logo.png" alt="logo"/>
+                </div>
+                <span className="powered">
+                    Powered by TMBD.
+                </span>
+
+            </footer>
+
         </div>
     );
 }

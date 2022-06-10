@@ -1,0 +1,37 @@
+.movies_cart {
+  position: relative;
+  top: 0;
+  cursor: pointer;
+  border-radius: 28px;
+  overflow: hidden;
+  min-width: 193px;
+  max-width: 193px;
+
+  &:hover {
+    .cart_title {
+      background: #2e386e;
+    }
+  }
+
+
+  .cart_title {
+    background: #050E12;
+    padding: 13px 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: all 0.3s linear;
+
+    h3 {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 22px;
+    }
+
+    .year {
+      color: grey;
+      font-size: 12px;
+      font-weight: 200;
+    }
+  }
+}

@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   row-gap: 35px;
-
+  border-bottom: 1px solid #2e386e;
 
   h3 {
     text-align: center;
@@ -53,34 +53,6 @@
         transform: translateX(-193px);
       }
 
-      .popular_cart {
-        position: relative;
-        top: 0;
-
-        border-radius: 28px;
-        overflow: hidden;
-        min-width: 193px;
-
-
-
-        .cart_title {
-          background: #050E12;
-          padding: 13px 18px;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          h3{
-            font-weight: 500;
-            font-size: 18px;
-            line-height: 22px;
-          }
-          .year{
-            color: grey;
-            font-size: 12px;
-            font-weight: 200;
-          }
-        }
-      }
     }
   }
 }

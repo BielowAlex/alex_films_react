@@ -1,0 +1,86 @@
+.popular {
+  display: flex;
+  flex-direction: column;
+  row-gap: 35px;
+
+
+  h3 {
+    text-align: center;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 58px;
+  }
+
+  .popular_carrousel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 25px;
+
+    svg {
+      cursor: pointer;
+
+      rect, g {
+        transition: all 0.2s linear;
+      }
+
+      &:hover {
+        rect, g {
+          fill: #0a0e1c;
+        }
+      }
+    }
+
+    .carrousel_screen {
+      width: 100%;
+      height: 340px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .popular_list {
+      display: flex;
+      position: absolute;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      column-gap: 35px;
+      max-width: 100%;
+      min-width: 100%;
+      transition: all 0.4s ease;
+
+      &._active {
+        transform: translateX(-193px);
+      }
+
+      .popular_cart {
+        position: relative;
+        top: 0;
+
+        border-radius: 28px;
+        overflow: hidden;
+        min-width: 193px;
+
+
+
+        .cart_title {
+          background: #050E12;
+          padding: 13px 18px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          h3{
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 22px;
+          }
+          .year{
+            color: grey;
+            font-size: 12px;
+            font-weight: 200;
+          }
+        }
+      }
+    }
+  }
+}

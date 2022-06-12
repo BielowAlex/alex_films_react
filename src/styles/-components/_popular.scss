@@ -3,6 +3,7 @@
   flex-direction: column;
   row-gap: 35px;
   border-bottom: 1px solid #2e386e;
+  padding: 35px 0;
 
   h3 {
     text-align: center;
@@ -33,17 +34,18 @@
 
     .carrousel_screen {
       width: 100%;
-      height: 340px;
+      height: 370px;
       position: relative;
       overflow: hidden;
+      border-left: 1px solid #2e386e;
+      border-right: 1px solid #2e386e;
     }
 
     .popular_list {
       display: flex;
       position: absolute;
-      top: 0;
-      left: 0;
-      overflow: hidden;
+      top: 15px;
+      left: 10px;
       column-gap: 35px;
       max-width: 100%;
       min-width: 100%;

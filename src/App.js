@@ -10,8 +10,8 @@ function App() {
             <Header/>
             <div className="content">
                 <PopularSection/>
-                <TrendingMovies/>
-                <TrendingTV/>
+                {/*<TrendingMovies/>*/}
+                {/*<TrendingTV/>*/}
             </div>
             <Footer/>
         </div>

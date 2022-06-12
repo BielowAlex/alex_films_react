@@ -1,20 +1,53 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import {useDispatch, useSelector} from "react-redux";
+import StarRatings from "react-star-ratings/build/star-ratings";
+
+import {API_IMAGE_URL} from "../../constants";
+import {moviesActions} from "../../redux/slice";
+import {Trailer} from "../Trailer";
 
 const Header = () => {
+    const {
+        selectedMovie: {
+            id,
+            backdrop_path,
+            poster_path,
+            original_title,
+            overview,
+            vote_average
+        },
+        trailer
+    } = useSelector(state => state.movies);    // console.log(selectedMovie);
+    const dispatch = useDispatch();
+    console.log(id);
+
+
+    useEffect(() => {
+        if (id !== undefined) {
+            dispatch(moviesActions.getTrailer({id}));
+        }
+    }, [id]);
+
+
     return (
         <header className="header">
-            <img src="/img/header_back.jpg" alt="background"/>
+            <img src={API_IMAGE_URL + backdrop_path} alt="background"/>
             <div className="film_desc">
-                <img src="/img/header_back.jpg" alt="poster"/>
-                <h2>승리호 Space Sweepers</h2>
-                <p>In the year 2092, space is full of dangerous floating garbage like discarded satellites and
-                    deserted spaceships. The crew of a space junk collector ship called The Victory discovers a
-                    humanoid robot that’s known to be a weapon of mass destruction. They get involved in a risky
-                    business deal and travel through space looking for garbage they can make money off of while also
-                    competing with rival junk collectors.</p>
-                <span className="rating">
-                        7.0
+                <div className="movie_info">
+                    <img src={API_IMAGE_URL + poster_path} alt="poster"/>
+                    <h2>{original_title}</h2>
+                    <p>{overview}</p>
+                    <span className="rating">
+                                  {vote_average && <StarRatings
+                                      rating={vote_average / 2}
+                                      starDimension='30px'
+                                      numberOfStars={5}
+                                      starSpacing="1px"
+                                      starRatedColor='grey'/>} {vote_average && vote_average}
                     </span>
+
+                </div>
+                <Trailer trailer={trailer}/>
             </div>
         </header>
     );

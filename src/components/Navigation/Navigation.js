@@ -3,9 +3,9 @@ import React from 'react';
 const Navigation = () => {
     return (
         <nav className="nav">
-            <div className="logo">
+            <a className="logo">
                 <img width={58} height={58} src="/img/logo.png" alt="logo"/>
-            </div>
+            </a>
             <div className="search">
                 <label>
                     <input type="text"/>

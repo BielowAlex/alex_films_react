@@ -150,7 +150,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .header {
   position: relative;
-  height: 809px;
+  height: 600px;
   width: 100%;
   overflow: hidden;
   display: flex;
@@ -168,29 +168,39 @@ h1, h2, h3, h4, h5, h6 {
   z-index: -1;
 }
 .header .film_desc {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 1000px;
   padding: 35px;
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   z-index: 1;
 }
-.header .film_desc img {
-  margin-left: 100px;
-  position: sticky;
+.header .film_desc .movie_info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 10px;
+}
+.header .film_desc .movie_info img {
+  margin-left: 50px;
+  position: static;
   width: 200px;
   height: 300px;
   border: 1px solid #2e386e;
 }
-.header .film_desc h2 {
+.header .film_desc .movie_info h2 {
+  width: 400px;
   font-weight: 500;
   font-size: 32px;
-  line-height: 75px;
+  line-height: 40px;
 }
-.header .film_desc p {
-  width: 500px;
+.header .film_desc .movie_info p {
+  width: 400px;
   font-weight: 100;
   font-size: 14px;
-  line-height: 33px;
+  line-height: 13px;
 }
 
 .popular {
@@ -198,6 +208,7 @@ h1, h2, h3, h4, h5, h6 {
   flex-direction: column;
   row-gap: 35px;
   border-bottom: 1px solid #2e386e;
+  padding: 35px 0;
 }
 .popular h3 {
   text-align: center;
@@ -222,16 +233,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 .popular .popular_carrousel .carrousel_screen {
   width: 100%;
-  height: 340px;
+  height: 370px;
   position: relative;
   overflow: hidden;
+  border-left: 1px solid #2e386e;
+  border-right: 1px solid #2e386e;
 }
 .popular .popular_carrousel .popular_list {
   display: flex;
   position: absolute;
-  top: 0;
-  left: 0;
-  overflow: hidden;
+  top: 15px;
+  left: 10px;
   column-gap: 35px;
   max-width: 100%;
   min-width: 100%;
@@ -256,6 +268,7 @@ h1, h2, h3, h4, h5, h6 {
 .movies_cart .cart_title {
   background: #050E12;
   padding: 13px 18px;
+  height: 66px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -311,7 +324,7 @@ body {
 }
 
 .content_item {
-  padding: 52px;
+  padding: 52px 20px;
 }
 
 .footer {
@@ -325,6 +338,10 @@ body {
 .footer .powered {
   color: darkred;
   font-weight: 100;
+}
+
+.videoPlayer {
+  width: 500px;
 }
 
 /*# sourceMappingURL=style.css.map */

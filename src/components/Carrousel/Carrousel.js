@@ -1,10 +1,45 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {MoviesCart} from "../MoviesCart";
+import {useDispatch, useSelector} from "react-redux";
+import {moviesActions} from "../../redux/slice";
 
 const Carrousel = () => {
+    const {popularMovies} = useSelector(state => state.movies);
+    const dispatch = useDispatch();
+    let [count, setCount] = useState(0);
+    const maxlengh =  14*(-228);
+
+    const nextMovie = () => {
+        console.log(maxlengh);
+        if (count >= maxlengh) {
+            setCount(-228 + count)
+        }
+    }
+    const prevMovie = () => {
+        if (count < 0)
+            setCount(+228 + count)
+    }
+
+    useEffect(() => {
+
+        const list = document.querySelector('.popular_list');
+        list.style.transform = `translateX(${count}px)`;
+
+    }, [count])
+
+    useEffect(() => {
+        dispatch(moviesActions.getPopularMovies());
+        console.log(popularMovies);
+    }, []);
+
+    const selectMovie = (movie) => {
+        dispatch(moviesActions.setMovie(movie))
+    }
+
+
     return (
         <div className="popular_carrousel">
-            <svg width="25.618px" height="25.618px" viewBox="-5 0 25.618 25.618"
+            <svg onClick={prevMovie} width="25.618px" height="25.618px" viewBox="-5 0 25.618 25.618"
                  xmlns="http://www.w3.org/2000/svg">
                 <g id="Layer_77" transform="translate(-8.191 -3.191)">
                     <g id="Group_35">
@@ -17,18 +52,17 @@ const Carrousel = () => {
                     </g>
                 </g>
             </svg>
+
             <div className="carrousel_screen">
                 <div className="popular_list">
-                    <MoviesCart/>
+                    {popularMovies.results && popularMovies.results.map(movie =>
+                        <MoviesCart key={movie.id} movie={movie} selectMovie={selectMovie}/>
+                    )}
                 </div>
             </div>
 
-
-            <svg width="25px" height="25px" viewBox="-5 0 25 25" version="1.1"
+            <svg onClick={nextMovie} width="25px" height="25px" viewBox="-5 0 25 25" version="1.1"
                  xmlns="http://www.w3.org/2000/svg">
-
-                <title>right</title>
-                <desc>Created with Sketch.</desc>
                 <g id="icons" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                     <g id="ui-gambling-website-lined-icnos-casinoshunter"
                        transform="translate(-1783.000000, -158.000000)" fill="#ffff" fillRule="nonzero">

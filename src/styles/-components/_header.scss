@@ -1,6 +1,6 @@
 .header {
   position: relative;
-  height: 809px;
+  height: 600px;
   width: 100%;
   overflow: hidden;
   display: flex;
@@ -20,31 +20,43 @@
   }
 
   .film_desc {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 1000px;
     padding: 35px;
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     z-index: 1;
+    .movie_info{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      row-gap: 10px;
+      //align-items: center;
 
-    img{
-      margin-left: 100px;
-      position: sticky;
-      width: 200px;
-      height: 300px;
-      border:1px solid #2e386e ;
+      img{
+        margin-left: 50px;
+        position: static;
+        width: 200px;
+        height: 300px;
+        border:1px solid #2e386e ;
+      }
+
+      h2 {
+        width: 400px;
+        font-weight: 500;
+        font-size: 32px;
+        line-height: 40px;
+      }
+
+      p {
+        width: 400px;
+        font-weight: 100;
+        font-size: 14px;
+        line-height: 13px;
+      }
     }
 
-    h2 {
-      font-weight: 500;
-      font-size: 32px;
-      line-height: 75px;
-    }
-
-    p {
-      width: 500px;
-      font-weight: 100;
-      font-size: 14px;
-      line-height: 33px;
-    }
   }
 }

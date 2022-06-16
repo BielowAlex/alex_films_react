@@ -20,8 +20,7 @@ const Navigation = () => {
             <ul className="navs">
                 <li><Link to="/" className={pathname === "/" ? "_active" : ''}>Home</Link></li>
                 <li><Link to="/movies" className={pathname === "/movies" ? "_active" : ''}>Movies</Link></li>
-                <li><Link to="/movies">Movies</Link></li>
-                {/*<li><Link></Link></li>*/}
+                {/*<li><Link to="/movies">Movies</Link></li>*/}
             </ul>
 
             <div className="search">

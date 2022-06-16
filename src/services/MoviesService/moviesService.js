@@ -2,7 +2,7 @@ import {axiosService} from "../axios_service";
 import {urls} from "../../constants";
 
 const moviesService = {
-    getMovie:(pageNum,genreId)=>axiosService
+    getMovies:(pageNum,genreId)=>axiosService
         .get(`${urls.movies}?page=${pageNum}&with_genres=${genreId}&append_to_response=videos`),
 
     getMovieByID:(movieID)=> axiosService
@@ -11,6 +11,9 @@ const moviesService = {
     getGenres:()=>axiosService.get(urls.genres),
 
     getPopular:()=>axiosService.get(`${urls.popular}?append_to_response=videos`),
+
+    getTrendingMovies:(pageNum)=>axiosService.get(`${urls.trendingMovies}?page=${pageNum}`),
+    getTrendingTV:(pageNum)=>axiosService.get(`${urls.trendingTV}?page=${pageNum}`),
 }
 
 export {

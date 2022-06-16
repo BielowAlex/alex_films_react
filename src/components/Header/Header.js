@@ -24,9 +24,9 @@ const Header = () => {
 
     useEffect(() => {
         if (id !== undefined) {
-            dispatch(moviesActions.getTrailer({id}));
+            dispatch(moviesActions.getTrailer(id));
         }
-    }, [id]);
+    }, [dispatch, id]);
 
 
     return (
@@ -43,7 +43,10 @@ const Header = () => {
                                       starDimension='30px'
                                       numberOfStars={5}
                                       starSpacing="1px"
-                                      starRatedColor='grey'/>} {vote_average && vote_average}
+                                      starRatedColor='#2e386e'/>}
+                        <span className="rating_count">
+                            {vote_average}
+                        </span>
                     </span>
 
                 </div>

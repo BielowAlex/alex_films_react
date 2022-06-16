@@ -1,11 +1,21 @@
 import React from 'react';
+import {Link, useLocation} from "react-router-dom";
 
 const Navigation = () => {
+
+    const {pathname} = useLocation();
     return (
         <nav className="nav">
-            <a className="logo">
+            <Link to="/" className="logo">
                 <img width={58} height={58} src="/img/logo.png" alt="logo"/>
-            </a>
+            </Link>
+
+            <ul className="navs">
+                <li><Link to="/" className={pathname==="/"?"_active":''}>Home</Link></li>
+                <li><Link to="/movies" className={pathname==="/movies"?"_active":''}>Movies</Link></li>
+                {/*<li><Link></Link></li>*/}
+            </ul>
+
             <div className="search">
                 <label>
                     <input type="text"/>

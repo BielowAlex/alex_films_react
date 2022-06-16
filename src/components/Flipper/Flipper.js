@@ -1,46 +1,23 @@
-import React, {useEffect, useState} from 'react';
-import {MoviesCart} from "../MoviesCart";
+import React from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {moviesActions} from "../../redux/slice";
 
-const Carrousel = () => {
-    const {popularMovies} = useSelector(state => state.movies);
-    const dispatch = useDispatch();
-    let [count, setCount] = useState(0);
-    const maxLength =  15*(-228);
+const Flipper = () => {
 
-    const nextMovie = () => {
-        console.log(maxLength);
-        if (count >= maxLength) {
-            setCount(-228 + count)
+    const {pageNum,totalPage} = useSelector(state => state.movies);
+    const dispatch = useDispatch();
+    const btns = {
+        prev:()=>{
+            dispatch(moviesActions.prevPage());
+        },
+        next:()=>{
+            dispatch(moviesActions.nextPage());
         }
     }
-    const prevMovie = () => {
-        if (count < 0)
-            setCount(+228 + count)
-    }
-
-    useEffect(() => {
-
-        const list = document.querySelector('.popular_list');
-        list.style.transform = `translateX(${count}px)`;
-
-    }, [count])
-
-    useEffect(() => {
-        dispatch(moviesActions.getPopularMovies());
-    }, [dispatch]);
-
-    const selectMovie = (movie) => {
-        dispatch(moviesActions.setMovie(movie));
-        // eslint-disable-next-line no-restricted-globals
-        window.scrollTo(pageXOffset,0)
-    }
-
 
     return (
-        <div className="popular_carrousel">
-            <svg onClick={prevMovie} width="25.618px" height="25.618px" viewBox="-5 0 25.618 25.618"
+        <div className="flipper">
+            <svg onClick={btns.prev}  width="25.618px" height="25.618px" viewBox="-5 0 25.618 25.618"
                  xmlns="http://www.w3.org/2000/svg">
                 <g id="Layer_77" transform="translate(-8.191 -3.191)">
                     <g id="Group_35">
@@ -54,18 +31,11 @@ const Carrousel = () => {
                 </g>
             </svg>
 
-            <div className="carrousel_screen">
-                <div className="popular_list">
-                    {popularMovies.results && popularMovies.results.map(movie =>
-                        <MoviesCart key={movie.id} movie={movie} selectMovie={selectMovie}/>
-                    )}
-                    <div className="see_more_cart">
-                            <h4>SEE MORE</h4>
-                    </div>
-                </div>
-            </div>
+            <span className="counts">
+                {pageNum} ... {totalPage}
+            </span>
 
-            <svg onClick={nextMovie} width="25px" height="25px" viewBox="-5 0 25 25" version="1.1"
+            <svg onClick={btns.next}  width="25px" height="25px" viewBox="-5 0 25 25" version="1.1"
                  xmlns="http://www.w3.org/2000/svg">
                 <g id="icons" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                     <g id="ui-gambling-website-lined-icnos-casinoshunter"
@@ -82,4 +52,4 @@ const Carrousel = () => {
     );
 };
 
-export {Carrousel};
+export {Flipper};

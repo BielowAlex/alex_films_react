@@ -6,9 +6,12 @@
   overflow: hidden;
   min-width: 193px;
   max-width: 193px;
+  text-decoration: none;
+  color: white;
 
   &:hover {
     .cart_title {
+      color: white;
       background: #2e386e;
     }
   }
@@ -21,12 +24,13 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    row-gap: 5px;
     transition: all 0.3s linear;
 
-    h3 {
+    h4 {
       font-weight: 500;
-      font-size: 18px;
-      line-height: 22px;
+      font-size: 13px;
+      line-height: 10px;
     }
 
     .year {
@@ -34,5 +38,21 @@
       font-size: 12px;
       font-weight: 200;
     }
+  }
+}
+.see_more_cart{
+  cursor: pointer;
+  border-radius: 28px;
+  overflow: hidden;
+  min-width: 193px;
+  max-width: 193px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #050E12;
+  transition: all 0.3s linear;
+
+  &:hover{
+    background: #2e386e;
   }
 }

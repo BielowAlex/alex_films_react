@@ -1,19 +1,15 @@
 import React from 'react';
 import {MoviesCart} from "../MoviesCart";
+import {CartLink} from "../CartLink";
 
-const MoviesList = () => {
+const MoviesList = ({movies,isLinks,selectMovie}) => {
     return (
         <div className="movies_list">
-            <MoviesCart/>
-            <MoviesCart/>
-            <MoviesCart/>
-            <MoviesCart/>
-            <MoviesCart/>
-            <MoviesCart/>
-            <MoviesCart/>
-            <MoviesCart/>
-            <MoviesCart/>
-            <MoviesCart/>
+            {movies && movies.map(movie=>!isLinks
+                ?
+                <MoviesCart key={movie.id} movie={movie} selectMovie={selectMovie}/>
+                :
+                <CartLink key={movie.id} movie={movie} />)}
         </div>
     );
 };

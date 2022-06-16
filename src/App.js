@@ -1,20 +1,18 @@
-
 import './styles/style.css';
-import {Footer, Header, Navigation, PopularSection, TrendingMovies, TrendingTV} from "./components";
-
+import {Route, Routes} from "react-router-dom";
+import {MainLayout} from "./layouts";
+import {Home, MovieInfo, MovieSearch} from "./pages";
+import {Movies} from "./pages/Movies";
 
 function App() {
     return (
-        <div className="wrapper">
-           <Navigation/>
-            <Header/>
-            <div className="content">
-                <PopularSection/>
-                {/*<TrendingMovies/>*/}
-                {/*<TrendingTV/>*/}
-            </div>
-            <Footer/>
-        </div>
+        <Routes>
+            <Route path="/" element={<MainLayout/>}>
+                <Route path="/" element={<Home/>}/>
+                <Route path="/movies" element={<Movies/>}/>
+                <Route path="/movies/:id" element={<MovieInfo/>}/>
+            </Route>
+        </Routes>
     );
 }
 

@@ -5,7 +5,9 @@ const urls = {
     movies: '/discover/movie',
     movie: '/movie',
     genres: '/genre/movie/list',
-    popular:'/movie/popular'
+    popular:'/movie/popular',
+    trendingMovies:'/trending/movie/week',
+    trendingTV:'/trending/tv/week'
 }
 
 export {

@@ -1,0 +1,66 @@
+.genres {
+  border-bottom: 1px solid #434f9a;
+  display: flex;
+  flex-direction: column;
+
+  .top_genres_list {
+    display: flex;
+    justify-content: center;
+    //background: black;
+    border-bottom: 1px solid #434f9a;
+
+    li {
+      background: #2e386e;
+      font-size: 24px;
+      font-weight: 200;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-right: 1px solid #434f9a;
+      border-left: 1px solid #434f9a;
+      transition: all 0.3s linear;
+
+      &._active{
+        background: #1A1F38;
+        color: rgba(196, 196, 196, 0.3);
+
+        &:hover{
+          background: #1A1F38;
+        }
+      }
+
+      &:hover{
+        background: #283469;
+      }
+    }
+
+  }
+  .genres_list{
+    display: flex;
+    flex-wrap: wrap;
+    background: #2e386e;
+
+    li{
+      background: #2e386e;
+      font-size: 18px;
+      font-weight: 200;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-right: 1px solid #434f9a;
+      border-bottom: 1px solid #434f9a;
+      transition: all 0.3s linear;
+
+      &._active{
+        background: #1A1F38;
+        color: rgba(196, 196, 196, 0.3);
+
+        &:hover{
+          background: #1A1F38;
+        }
+      }
+
+      &:hover{
+        background: #283469;
+      }
+    }
+  }
+}

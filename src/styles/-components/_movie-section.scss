@@ -6,6 +6,7 @@
   row-gap: 35px;
 
   a{
+    font-size: 26px;
     text-align: center;
     color: white;
     transition: all 0.2s linear;
@@ -19,10 +20,13 @@
     font-size: 48px;
     line-height: 58px;
   }
-  .movies_list{
-    display: grid;
-    grid-template-columns: repeat(5,1fr);
-    grid-template-rows: repeat(2,1fr);
-    grid-row-gap: 34.9px;
-  }
+
+}
+.movies_list{
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
+  grid-template-rows: repeat(2,1fr);
+  grid-row-gap: 34.9px;
+  grid-column-gap: 34.9px;
 }

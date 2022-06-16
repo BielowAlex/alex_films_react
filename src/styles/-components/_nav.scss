@@ -8,6 +8,34 @@
   background: var(--nav-color);
   border-bottom: 1px solid #2e386e;
 
+  .navs {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 40px;
+
+    li {
+      font-size: 24px;
+
+      a {
+        color: white;
+        text-decoration: none;
+        transition: all 0.3s linear;
+
+        &._active {
+          color: #13172a;
+
+          &:hover {
+            color: #13172a;
+          }
+        }
+
+        &:hover {
+          color: #dedede;
+        }
+      }
+    }
+  }
+
   .search {
     width: 375px;
     background: rgba(196, 196, 196, 0.3);
@@ -27,7 +55,8 @@
         font-weight: 100;
         font-size: 18px;
       }
-      svg{
+
+      svg {
         cursor: pointer;
       }
     }

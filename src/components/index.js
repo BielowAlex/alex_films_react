@@ -7,3 +7,5 @@ export * from './MoviesList';
 export * from './TrendingMovies';
 export * from './TrendingTV';
 export * from './Footer';
+export * from './Content';
+export * from './Genres';

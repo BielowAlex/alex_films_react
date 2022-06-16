@@ -1,0 +1,22 @@
+.flipper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 20px;
+  background: black;
+  padding: 50px 0;
+  width: 100%;
+
+  svg{
+    cursor: pointer;
+    rect,g{
+      transition: all 0.3s linear;
+      fill:#050E12;
+    }
+    &:hover{
+      rect,g{
+        fill:#2e386e;
+      }
+    }
+  }
+}

@@ -25,7 +25,7 @@ const getTrendingMovies = createAsyncThunk(
     });
 const getTrendingTV = createAsyncThunk(
     'moviesSlice/getTrendingTV',
-    async ({pageNum}) => {
+    async (pageNum) => {
         const {data} = await moviesService.getTrendingTV(pageNum)
         return data;
     });

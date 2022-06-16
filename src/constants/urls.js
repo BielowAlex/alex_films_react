@@ -7,7 +7,8 @@ const urls = {
     genres: '/genre/movie/list',
     popular:'/movie/popular',
     trendingMovies:'/trending/movie/week',
-    trendingTV:'/trending/tv/week'
+    trendingTV:'/trending/tv/week',
+    search:'/search/movie',
 }
 
 export {

@@ -9,3 +9,4 @@ export * from './TrendingTV';
 export * from './Footer';
 export * from './Content';
 export * from './Genres';
+export * from './NoResult';

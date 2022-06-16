@@ -25,7 +25,7 @@ const getTrendingMovies = createAsyncThunk(
     });
 const getTrendingTV = createAsyncThunk(
     'moviesSlice/getTrendingTV',
-    async (pageNum) => {
+    async ({pageNum}) => {
         const {data} = await moviesService.getTrendingTV(pageNum)
         return data;
     });
@@ -49,6 +49,13 @@ const getGenres = createAsyncThunk(
         return data.genres;
     });
 
+const searchResult = createAsyncThunk(
+    'moviesSlice/searchResult',
+    async ({query,pageNum}) => {
+        const {data} = await moviesService.searchMovie(query,pageNum);
+        return data;
+    });
+
 const setMovie = createAsyncThunk(
     'moviesSlice/setMovie',
     async (movie) => {
@@ -65,6 +72,8 @@ const setMovie = createAsyncThunk(
 
 const initialState = {
     movies: [],
+    searchResult:[],
+    query:'',
     trendingMovies: [],
     trendingTV: [],
     popularMovies: [],
@@ -80,10 +89,6 @@ const MoviesSlice = createSlice({
     name: 'moviesSlice',
     initialState,
     reducers: {
-        setMovie: (state, action) => {
-
-
-        },
         nextPage: (state) => {
             if (state.pageNum <= state.totalPage) {
                 state.pageNum += 1;
@@ -96,12 +101,21 @@ const MoviesSlice = createSlice({
         },
         setGenres: (state, action) => {
             state.genreID = action.payload;
+        },
+        setQuery:(state,action)=>{
+            state.query = action.payload
         }
     },
     extraReducers: {
         [getPopularMovies.fulfilled]: (state, action) => {
             state.popularMovies = action.payload;
             state.selectedMovie = action.payload.results[0];
+        },
+        [searchResult.fulfilled]:(state,action)=>{
+            console.log(action.payload);
+            state.searchResult = action.payload.results;
+            state.totalPage = action.payload.total_pages > 500 ? 500 : action.payload.total_pages;
+
         },
 
         [getTrendingMovies.fulfilled]: (state, action) => {
@@ -143,7 +157,7 @@ const MoviesSlice = createSlice({
     }
 });
 
-const {reducer: moviesReducer, actions: { nextPage, prevPage, setGenres}} = MoviesSlice;
+const {reducer: moviesReducer, actions: { nextPage, prevPage, setGenres,setQuery}} = MoviesSlice;
 
 const moviesActions = {
     getPopularMovies,
@@ -154,9 +168,10 @@ const moviesActions = {
     getConcreteMovies,
     nextPage,
     prevPage,
-    getGenres,
     setGenres,
-
+    setQuery,
+    getGenres,
+    searchResult,
 }
 
 export {

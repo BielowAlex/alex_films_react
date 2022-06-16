@@ -59,51 +59,65 @@ body {
   }
 
 
-
 }
 
-.detail{
+.detail {
   display: flex;
   padding: 0 70px;
   flex-direction: column;
 
-  .top_detail{
+  .top_detail {
     display: flex;
     height: 170px;
-    .poster{
-      img{
+
+    .poster {
+      img {
         position: relative;
         bottom: 150px;
         width: 205px;
         height: 308px;
       }
     }
-    .about_movie{
+
+    .about_movie {
       display: flex;
       flex-direction: column;
       justify-content: center;
       row-gap: 40px;
       padding: 20px;
 
-      h2{
+      h2 {
         font-weight: 500;
         font-size: 36px;
       }
     }
   }
 
-  .bot_detail{
+  .bot_detail {
     display: flex;
     justify-content: space-between;
-    p{
-      display: flex;
-      //align-items: center;
+    column-gap: 10px;
+
+    p {
       font-size: 24px;
       font-weight: 100;
     }
-    .trailer{
-        position: relative;
+
+    .trailer {
+      position: relative;
       bottom: 100px;
     }
+  }
+}
+
+
+.no_result{
+  width: 100%;
+  min-height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  h2{
+    font-size: 48px;
   }
 }

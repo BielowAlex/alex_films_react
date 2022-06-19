@@ -59,7 +59,6 @@ const searchResult = createAsyncThunk(
 const setMovie = createAsyncThunk(
     'moviesSlice/setMovie',
     async (movie) => {
-        console.log(typeof movie)
         if (typeof movie === 'object') {
             return movie;
         }else if(typeof movie==='string'){
@@ -112,7 +111,6 @@ const MoviesSlice = createSlice({
             state.selectedMovie = action.payload.results[0];
         },
         [searchResult.fulfilled]:(state,action)=>{
-            console.log(action.payload);
             state.searchResult = action.payload.results;
             state.totalPage = action.payload.total_pages > 500 ? 500 : action.payload.total_pages;
 
@@ -143,7 +141,6 @@ const MoviesSlice = createSlice({
         },
 
         [getTrailer.fulfilled]: (state, action) => {
-            console.log(action.payload);
             const trailer = action.payload.find(vid => vid.name === 'Official Trailer')
             if (trailer === undefined) {
                 state.trailer = action.payload[0];

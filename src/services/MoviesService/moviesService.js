@@ -3,7 +3,7 @@ import {urls} from "../../constants";
 
 const moviesService = {
     getMovies:(pageNum,genreId)=>axiosService
-        .get(`${urls.movies}?page=${pageNum}&with_genres=${genreId}&append_to_response=videos`),
+        .get(`${urls.movies}?page=${pageNum}&with_genres=${genreId}`),
 
     getMovieByID:(movieID)=> axiosService
         .get(`${urls.movie}/${movieID}?append_to_response=videos`),

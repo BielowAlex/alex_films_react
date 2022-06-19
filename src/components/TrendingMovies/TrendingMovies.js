@@ -7,7 +7,6 @@ import {Link, useLocation} from "react-router-dom";
 const TrendingMovies = () => {
     const dispatch = useDispatch();
     const {trendingMovies ,pageNum} = useSelector(state => state.movies);
-    console.log(pageNum);
     useEffect(() => {
         dispatch(moviesActions.getTrendingMovies(pageNum))
     }, [dispatch,pageNum]);
@@ -19,13 +18,13 @@ const TrendingMovies = () => {
 
 
     return (
-        <div className="content_item movies_section">
+        <Link to="/movies" className="content_item movies_section">
             <div className="title">
                 <h3>Trending movies</h3>
             </div>
-            <MoviesList movies={trendingMovies} isLinks={true} selectMovie={selectMovie}/>
+            <MoviesList movies={trendingMovies} isLinks={false} selectMovie={selectMovie}/>
             {pathname==="/"?<Link to="/movies">See more</Link>:null}
-        </div>
+        </Link>
     );
 };
 

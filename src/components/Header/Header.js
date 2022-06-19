@@ -19,11 +19,10 @@ const Header = () => {
         trailer
     } = useSelector(state => state.movies);    // console.log(selectedMovie);
     const dispatch = useDispatch();
-    console.log(id);
 
 
     useEffect(() => {
-        if (id !== undefined) {
+        if (!id) {
             dispatch(moviesActions.getTrailer(id));
         }
     }, [dispatch, id]);

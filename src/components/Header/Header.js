@@ -22,7 +22,7 @@ const Header = () => {
 
 
     useEffect(() => {
-        if (!id) {
+        if (id !== undefined) {
             dispatch(moviesActions.getTrailer(id));
         }
     }, [dispatch, id]);

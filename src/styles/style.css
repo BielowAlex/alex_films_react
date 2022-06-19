@@ -487,13 +487,11 @@ body {
   width: 100%;
   z-index: 2;
   background: #050E12;
-  backdrop-filter: blur(100px);
   overflow: hidden;
   height: 350px;
 }
 .movie_detail .back_poster img {
   width: inherit;
-  filter: blur(4px);
   height: 600px;
 }
 

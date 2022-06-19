@@ -10,7 +10,7 @@ const Genres = () => {
     const dispatch = useDispatch();
     const location = useLocation();
     let {search} = location;
-    const [params, setParams] = useState(search);
+    // const [params, setParams] = useState(search);
 
     useEffect(() => {
         dispatch(moviesActions.getGenres());
@@ -19,27 +19,27 @@ const Genres = () => {
 
     const genresToggle = async (genre) => {
         await dispatch(moviesActions.setGenres(genre.id));
-        setParams('');
+        // setParams('');
     }
 
     return (
         <div className="genres">
-            <ul className="top_genres_list">
-                <li
-                    className={params.includes('popular') ? '_active' : ''}
-                    onClick={()=>setParams('popular')}>
-                    Popular Movies
-                </li>
-                <li
-                    className={params.includes('trending') ? '_active' : ''}
-                    onClick={()=>setParams('trending')}>
-                    Trending Movies
-                </li>
-                <li className={params.includes('TV') ? '_active' : ''}
-                    onClick={()=>setParams('TV')}>
-                    Trending TV
-                </li>
-            </ul>
+            {/*<ul className="top_genres_list">*/}
+            {/*    <li*/}
+            {/*        className={params.includes('popular') ? '_active' : ''}*/}
+            {/*        onClick={()=>setParams('popular')}>*/}
+            {/*        Popular Movies*/}
+            {/*    </li>*/}
+            {/*    <li*/}
+            {/*        className={params.includes('trending') ? '_active' : ''}*/}
+            {/*        onClick={()=>setParams('trending')}>*/}
+            {/*        Trending Movies*/}
+            {/*    </li>*/}
+            {/*    <li className={params.includes('TV') ? '_active' : ''}*/}
+            {/*        onClick={()=>setParams('TV')}>*/}
+            {/*        Trending TV*/}
+            {/*    </li>*/}
+            {/*</ul>*/}
             <ul className="genres_list">
                 {genres && genres
                     .map(genre =>

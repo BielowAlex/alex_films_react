@@ -47,13 +47,11 @@ body {
     width: 100%;
     z-index: 2;
     background: #050E12;
-    backdrop-filter: blur(100px);
     overflow: hidden;
     height: 350px;
 
     img {
       width: inherit;
-      filter: blur(4px);
       height: 600px;
     }
   }

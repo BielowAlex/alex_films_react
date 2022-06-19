@@ -6,7 +6,7 @@ const Home = () => {
         <Content>
             <PopularSection/>
             <TrendingMovies/>
-            <TrendingTV/>
+            {/*<TrendingTV/>*/}
         </Content>
     );
 };

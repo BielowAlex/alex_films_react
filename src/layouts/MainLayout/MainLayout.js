@@ -11,7 +11,6 @@ const MainLayout = () => {
             <Navigation/>
             {pathname==='/'?<Header/>:null}
             <Outlet/>
-            {/*<Footer/>*/}
         </div>
     );
 };
